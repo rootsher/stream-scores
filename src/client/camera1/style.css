@@ -1,0 +1,49 @@
+.camera {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.camera iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.camera .scores {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.camera .scores .opponents {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    background-color: rgba(200, 200, 200, 0.7);
+}
+.camera .scores .opponents .opponent {
+    display: flex;
+    background-color: rgba(200, 200, 200, 0.9);
+}
+.camera .scores .opponents .opponent:nth-of-type(1) .name {
+    border-right: 1px solid #000;
+    padding-right: 30px;
+}
+.camera .scores .opponents .opponent:nth-of-type(2) .name {
+    border-left: 1px solid #000;
+    padding-left: 30px;
+}
+.camera .scores .opponents .opponent:nth-of-type(1) .score {
+    border-right: 1px solid #000;
+}
+.camera .scores .opponents .opponent:nth-of-type(2) .score {
+    border-left: 1px solid #000;
+}
+.camera .scores .opponents .opponent .name {
+    padding: 10px;
+}
+.camera .scores .opponents .opponent .score {
+    padding: 10px;
+    font-weight: bold;
+}

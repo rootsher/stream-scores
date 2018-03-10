@@ -1,0 +1,12 @@
+{
+  "name": "stream-scores",
+  "version": "1.0.0",
+  "description": "stream-scores",
+  "scripts": {
+    "server": "node ./src/server/index.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
+}
