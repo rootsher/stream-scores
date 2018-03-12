@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>stream-scores - camera 1</title>
+    <link rel="stylesheet" href="/camera/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
+</head>
+<body>
+<div class="camera">
+    <div class="scores">
+        <div class="opponents">
+            <div class="opponent opponent-1">
+                <div class="name"></div>
+                <div class="score">0</div>
+            </div>
+            <div class="opponent opponent-2">
+                <div class="score">0</div>
+                <div class="name"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/camera/index.js"></script>
+</div>
+</body>
+</html>

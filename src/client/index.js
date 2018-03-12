@@ -11,6 +11,11 @@ class Opponent {
 			score: parseInt(this.$score.value)
 		};
 	}
+
+	update(opponent) {
+		this.$name.value = opponent.name;
+		this.$score.value = opponent.score;
+	}	
 }
 
 class Camera {
@@ -22,6 +27,8 @@ class Camera {
 		this.$save = this.$camera.querySelector('.save');
 
 		this.$save.addEventListener('click', () => this._save());
+
+		socket.on('cameras', data => this._init(data));
 	}
 
 	_save() {
@@ -31,7 +38,16 @@ class Camera {
 			opponent2: this.opponent2.value()
 		};
 
-		console.log(JSON.stringify(result, null, '    '));
+		socket.emit('new-data', result);
+	}
+
+	_init(data) {
+		for(const camera in data) {
+			if (data.hasOwnProperty(camera) && camera === this.name) {
+				this.opponent1.update(data[camera].opponent1);
+				this.opponent2.update(data[camera].opponent2);
+			}
+		}
 	}
 }
 

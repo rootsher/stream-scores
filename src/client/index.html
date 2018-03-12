@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>stream-scores</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
 </head>
 <body>
     <main class="cameras">
-        <!-- CAMERA #1 --->
+        <!-- CAMERA #1 -->
         <section class="camera camera-1">
             <h2>camera 1</h2>
             <div class="screen">
                 <iframe
-                    src="camera1"
+                    src="camera/1"
                     frameborder="0"
                     allowfullscreen
                 ></iframe>
@@ -42,12 +46,12 @@
                 </div>
             </div>
         </section>
-        <!-- CAMERA #2 --->
+        <!-- CAMERA #2 -->
         <section class="camera camera-2">
             <h2>camera 2</h2>
             <div class="screen">
                 <iframe
-                    src="camera1"
+                    src="camera/2"
                     frameborder="0"
                     allowfullscreen
                 ></iframe>
@@ -77,7 +81,7 @@
             </div>
         </section>
 
-        <script src="index.js"></script>
+        <script src="/index.js"></script>
     </main>
 </body>
 </html>
