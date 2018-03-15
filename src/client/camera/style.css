@@ -1,5 +1,7 @@
 body {
-    background: #22b14c;
+    background: darkgreen;
+    margin: 0;
+    padding: 0;
 }
 
 .camera {
@@ -14,6 +16,28 @@ body {
     width: 100%;
     height: 100%;
 }
+.camera .logos .logos-left,
+.camera .logos .logos-right {
+    position: absolute;
+    top: 30px;
+}
+.camera .logos .logos-left {
+    left: 30px;
+}
+.camera .logos img {
+    max-height: 100px;
+}
+.camera .logos .logos-left img {
+    margin-right: 30px;
+    float: left;
+}
+.camera .logos .logos-right {
+    right: 30px;
+}
+.camera .logos .logos-right img {
+    margin-left: 30px;
+    float: right;
+}
 .camera .scores {
     position: absolute;
     bottom: 0;
@@ -24,7 +48,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #000;
-    background-color: rgba(200, 200, 200, 0.7);
+    background-color: rgb(200, 200, 200);
 }
 .camera .scores .opponents .opponent {
     display: flex;
