@@ -1,3 +1,7 @@
+@font-face {
+    font-family: muso;
+    src:url(/assets/font.woff2) format('woff2');
+}
 body {
     background: darkgreen;
     margin: 0;
@@ -46,32 +50,63 @@ body {
 }
 .camera .scores .opponents {
     display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #000;
-    background-color: rgb(200, 200, 200);
+    justify-content: center;
+    height: 50px;
+    font-size: 28px;
+    align-items: center;
+    flex-direction: row;
+    color: #FFF;
+    line-height: 0;
+    background: linear-gradient( #b44728, #4f220f);
+    font-family: muso;
 }
 .camera .scores .opponents .opponent {
     display: flex;
-    background-color: rgba(200, 200, 200, 0.9);
 }
 .camera .scores .opponents .opponent:nth-of-type(1) .name {
-    border-right: 1px solid #000;
     padding-right: 30px;
 }
 .camera .scores .opponents .opponent:nth-of-type(2) .name {
-    border-left: 1px solid #000;
     padding-left: 30px;
 }
-.camera .scores .opponents .opponent:nth-of-type(1) .score {
-    border-right: 1px solid #000;
-}
-.camera .scores .opponents .opponent:nth-of-type(2) .score {
-    border-left: 1px solid #000;
-}
 .camera .scores .opponents .opponent .name {
+    align-self: center;
     padding: 10px;
+    font-size: 28px;
 }
 .camera .scores .opponents .opponent .score {
+    align-self: center;
     padding: 10px;
     font-weight: bold;
+    font-size: 36px;
+}
+.camera .scores .opponents .opponent .flag {
+      width: 40px;
+      height: 40px;
+      margin: 4px;
+      border-radius: 30px;
+}
+.camera .scores .opponents .opponent .flag-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.camera .scores .opponents .opponent .flag-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.camera .scores .tableinfo {
+    font-size: 20px;
+    color: #FFF;
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.camera .scores .tableinfo .element {
+    padding: 0 4px;
+}
+.camera .scores .tableinfo .element-middle {
+    margin-left: -7px;
 }
