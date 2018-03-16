@@ -8,6 +8,10 @@ body {
     padding: 0;
 }
 
+.visibility--hidden {
+    visibility: hidden;
+}
+
 .camera {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }

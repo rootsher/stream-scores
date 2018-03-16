@@ -1,10 +1,12 @@
 const cameraId = window.location.pathname.split("/")[2];
 
+document.querySelector('.element-start').innerHTML = `Stół ${cameraId}`;
+
 class Opponent {
-	constructor($opponent) {
-		this.$opponent = $opponent;
-		this.$name = this.$opponent.querySelector('.name');
-		this.$score = this.$opponent.querySelector('.score');
+	constructor(opponent) {
+		this.opponent = opponent;
+		this.$name = document.querySelector(`.opponent.${this.opponent} .name`);
+		this.$score = document.querySelector('.score').querySelector(`.${this.opponent}`);
 	}
 
 	update(name, score) {
@@ -13,8 +15,8 @@ class Opponent {
 	}	
 }
 
-const $opponent1 = new Opponent(document.querySelector('.opponent-1'));
-const $opponent2 = new Opponent(document.querySelector('.opponent-2'));
+const $opponent1 = new Opponent('opponent-1');
+const $opponent2 = new Opponent('opponent-2');
 
 function update(data) {
 	const { opponent1, opponent2 } = data;
