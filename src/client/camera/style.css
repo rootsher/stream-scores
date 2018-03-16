@@ -48,55 +48,8 @@ body {
     left: 0;
     right: 0;
 }
-.camera .scores .opponents {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    font-size: 28px;
-    align-items: center;
-    flex-direction: row;
-    color: #FFF;
-    line-height: 0;
-    background: linear-gradient( #b44728, #4f220f);
-    font-family: muso;
-}
-.camera .scores .opponents .opponent {
-    display: flex;
-}
-.camera .scores .opponents .opponent:nth-of-type(1) .name {
-    padding-right: 30px;
-}
-.camera .scores .opponents .opponent:nth-of-type(2) .name {
-    padding-left: 30px;
-}
-.camera .scores .opponents .opponent .name {
-    align-self: center;
-    padding: 10px;
-    font-size: 28px;
-}
-.camera .scores .opponents .opponent .score {
-    align-self: center;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 36px;
-}
-.camera .scores .opponents .opponent .flag {
-      width: 40px;
-      height: 40px;
-      margin: 4px;
-      border-radius: 30px;
-}
-.camera .scores .opponents .opponent .flag-1 {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-.camera .scores .opponents .opponent .flag-2 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-.camera .scores .tableinfo {
+
+.camera .scores .tableInfo {
     font-size: 20px;
     color: #FFF;
     background-color: #000;
@@ -104,9 +57,51 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-.camera .scores .tableinfo .element {
+.camera .scores .tableInfo .element {
     padding: 0 4px;
 }
-.camera .scores .tableinfo .element-middle {
+.camera .scores .tableInfo .element-middle {
     margin-left: -7px;
 }
+
+.camera .scores .opponents {
+    display: flex;
+    height: 50px;
+    font-size: 28px;
+    color: #FFF;
+    line-height: 0;
+    background: linear-gradient( #b44728, #4f220f);
+    font-family: muso;
+}
+.camera .scores .opponents .opponent:nth-of-type(1) {
+    text-align: right;
+}
+.camera .scores .opponents .opponent {
+    display: flex;
+    flex-grow: 2;
+    width: 100%;
+    padding: 5px 10px;
+    justify-content: space-between;
+}
+.camera .scores .opponents .opponent .name {
+    align-self: center;
+}
+.camera .scores .opponents .opponent .flag {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 30px;
+}
+.camera .scores .opponents .score {
+    display: flex;
+    flex-grow: 1;
+    padding: 5px 10px;
+    align-self: center;
+    font-weight: bold;
+    font-size: 36px;
+}
+.camera .scores .opponents .score .opponent-1 {}
+.camera .scores .opponents .score .break {
+    margin: 0 8px;
+}
+.camera .scores .opponents .score .opponent-2 {}
