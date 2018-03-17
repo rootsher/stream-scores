@@ -25,6 +25,15 @@ main.cameras section.camera .screen iframe {
     height: inherit;
 }
 main.cameras section.camera .details {}
+main.cameras section.camera .details .stage {
+    width: inherit;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+main.cameras section.camera .details .stage input {
+    align-self: center;
+}
 main.cameras section.camera .details .opponents {
     display: flex;
     justify-content: space-between;
@@ -58,6 +67,9 @@ main.cameras section.camera .details .opponents .opponent .score {}
 main.cameras section.camera .details .opponents .opponent .score input {
     max-width: 40px;
 }
+main.cameras section.camera .details .opponents .score-agreement label {
+    cursor: pointer;
+}
 main.cameras section.camera .details .save {
     display: flex;
     align-items: center;
@@ -73,4 +85,13 @@ main.cameras section.camera .details .save button {
 }
 main.cameras section.camera .details .save button:focus {
     border-bottom: 1px dotted #F00;
+}
+
+main.cameras section.camera .details .save p {
+    width: 400px;
+    font-size: 14px;
+    text-align: center;
+}
+main.cameras section.camera .details .save p a {
+    color: #F00;
 }
