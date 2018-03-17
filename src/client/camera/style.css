@@ -24,10 +24,16 @@ body {
     width: 100%;
     height: 100%;
 }
-.camera .logos .logos-left,
 .camera .logos .logos-right {
     position: absolute;
     top: 30px;
+}
+.camera .logos .logos-left {
+    position: absolute;
+    bottom: 0;
+}
+.camera .logos .logos-left.with-scores {
+    bottom: 70px;
 }
 .camera .logos .logos-left {
     left: 30px;
@@ -36,8 +42,8 @@ body {
     max-height: 100px;
 }
 .camera .logos .logos-left img {
-    margin-right: 30px;
-    float: left;
+    margin-bottom: 30px;
+    display: block;
 }
 .camera .logos .logos-right {
     right: 30px;
@@ -62,12 +68,19 @@ body {
     justify-content: space-between;
 }
 .camera .scores .tableInfo .element {
+    width:  33%;
     padding: 0 4px;
+    flex-grow: 1;
 }
 .camera .scores .tableInfo .element-middle {
-    margin-left: -7px;
+    flex-grow: 2;
+    text-align: center;
 }
-
+.camera .scores .tableInfo .element-start {
+}
+.camera .scores .tableInfo .element-end {
+    text-align: right;
+}
 .camera .scores .opponents {
     display: flex;
     height: 50px;

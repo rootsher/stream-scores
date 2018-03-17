@@ -8,7 +8,7 @@ class Opponent {
 	value() {
 		return {
 			name: this.$name.value,
-			score: parseInt(this.$score.value)
+			score: this.$score.value
 		};
 	}
 
@@ -24,9 +24,13 @@ class Camera {
 		this.$camera = document.querySelector(`.${this.name}`);
 		this.opponent1 = new Opponent(this.$camera.querySelector('.opponent-1'));
 		this.opponent2 = new Opponent(this.$camera.querySelector('.opponent-2'));
+		this.$checkbox = this.$camera.querySelector('.checkbox');
+		this.$switch = this.$camera.querySelector('.switch-opponents');
+		this.$stage = this.$camera.querySelector('.stage input');
 		this.$save = this.$camera.querySelector('.save');
 
 		this.$save.addEventListener('click', () => this._save());
+		this.$switch.addEventListener('click', () => this._switchOpponents());
 
 		socket.on('cameras', data => this._init(data));
 	}
@@ -35,10 +39,19 @@ class Camera {
 		const result = {
 			camera: this.name,
 			opponent1: this.opponent1.value(),
-			opponent2: this.opponent2.value()
+			opponent2: this.opponent2.value(),
+			showScores: this.$checkbox.checked,
+			stage: this.$stage.value
 		};
 
 		socket.emit('new-data', result);
+	}
+
+	_switchOpponents() {
+		const opponent1 = this.opponent1.value();
+
+		this.opponent1.update(this.opponent2.value());
+		this.opponent2.update(opponent1);
 	}
 
 	_init(data) {
@@ -46,6 +59,12 @@ class Camera {
 			if (data.hasOwnProperty(camera) && camera === this.name) {
 				this.opponent1.update(data[camera].opponent1);
 				this.opponent2.update(data[camera].opponent2);
+
+				if (data[camera].showScores) {
+					this.$checkbox.checked = true;
+				} else {
+					this.$checkbox.checked = false;		
+				}
 			}
 		}
 	}
